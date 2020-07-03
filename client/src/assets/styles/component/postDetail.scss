@@ -1,0 +1,48 @@
+@import '@/assets/styles/preset/color.scss';
+
+.post-detail {
+  margin: 0 0 50px;
+  .header {
+    .title {
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+    .tag {
+      margin-bottom: 5px;
+      span {
+        display: inline-block;
+        margin:  0 5px 5px 0;
+        border-radius: 4px;
+        background: #{$black15};
+        padding: 0 8px;
+        line-height: 20px;
+        vertical-align: top;
+      }
+    }
+    .created,
+    .updated {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 5px;
+    }
+  }
+  .body {
+    border-top: 1px solid #{$black};
+    padding: 50px 0 ;
+    margin-top: 30px;
+    .markdown {
+      padding-right: 0;
+      padding-left: 0;
+    }
+    .button-group {
+      margin-top: 100px;
+      width: 100%;
+      text-align: right;
+    }
+  }
+  .reply {
+    border-radius: 4px;
+    background: #{$white};
+    padding: 10px 5px;
+  }
+}

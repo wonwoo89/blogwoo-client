@@ -1,0 +1,15 @@
+@import '@/assets/styles/preset/color.scss';
+
+.post {
+  position: relative;
+}
+
+/* transition */
+.post-detail-enter,
+.post-detail-leave-to {
+  opacity: 0;
+  height: 0;
+}
+.post-detail-enter-active {
+  transition: all 1s ease;
+}

@@ -1,0 +1,277 @@
+@import '@/assets/styles/preset/color.scss';
+
+#form {
+  width: 100%;
+  margin: 0;
+  .inner {
+    max-width: 1024px;
+    padding : 0 30px;
+    margin: 0 auto;
+  }
+  .form-control {
+    width: 100%;
+    border: 0;
+    outline: none;
+    &[name="subject"] {
+      height: 35px;
+    }
+    &[name="contents"] {
+      width: 100%;
+      height: 100%;
+      min-height: 100%;
+      padding: 0;
+      resize: none;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      transition: none;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      tab-size: 4;
+      &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        font-size: 14px;
+      }
+      &::-moz-placeholder { /* Firefox 19+ */
+        font-size: 14px;
+      }
+      &:-ms-input-placeholder { /* IE 10+ */
+        font-size: 14px;
+      }
+      &:-moz-placeholder { /* Firefox 18- */
+        font-size: 14px;
+      }
+    }
+  }
+  .main {
+    position: fixed;
+    top: 140px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 95px;
+    //overflow: hidden;
+    .inner {
+      position: relative;
+      top: -58px;
+      width: 100%;
+      height: 100%;
+      .subject {
+        border-radius: 4px 4px 0 0;
+        background: #{$white};
+        label {
+          width: 100%;
+        }
+      }
+      .board {
+        width: 100%;
+        height: 100%;
+        border-radius: 0 0 4px 4px;
+        background: #{$white};
+      }
+    }
+    label,
+    .markdown {
+      width: 50%;
+      height: 100%;
+    }
+    label {
+      display: inline-block;
+      padding: 20px;
+      .form-control {
+        padding: 5px;
+        color: #{$black};
+      }
+    }
+    .markdown {
+      display: inline-block;
+      border: 4px solid #{$white};
+      border-radius: 8px;
+      background: #1d1d1d;
+      padding: 20px;
+      margin: 0;
+      vertical-align: top;
+      .scroll {
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        .text {
+          width: 100%;
+          min-height: 100%;
+          white-space: pre-wrap;
+          word-break: keep-all;
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .submit {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 0 30px;
+    transition: padding .3s ease;
+    .inner {
+      .line {
+        margin-top: 0;
+      }
+      .button-group {
+        text-align: right;
+        button {
+          width: 90px;
+          margin-left: 10px;
+          border: 0;
+          background: none;
+          &:hover {
+            color: #{$white} !important;
+            font-weight: bold;
+          }
+          &.send {
+            color: #{$white};
+          }
+        }
+      }
+    }
+  }
+}
+
+#app {
+  .tag-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #{$black};
+      opacity: .3;
+    }
+    .float {
+      position: relative;
+      top: 50%;
+      width: 100%;
+      max-width: 500px;
+      min-height: 200px;
+      padding: 0 20px;
+      margin: -200px auto;
+      .form-group {
+        background: #{$white};
+        padding: 20px 20px 10px;
+      }
+      .list {
+        background: #{$white};
+        padding: 0 20px;
+        .tag {
+          position: relative;
+          background: #{$black15};
+          padding: 0 15px;
+          .icon-svg.delete {
+            right: 5px;
+            width: 12px;
+            height: 12px;
+            margin-top: -6px;
+            line-height: normal;
+          }
+        }
+      }
+      .button-group {
+        display: inline-block;
+        width: 100%;
+        background: #{$white};
+        padding: 20px;
+        button.btn {
+          float: left;
+          width: 32%;
+          border: 0;
+          background: none;
+          &:hover {
+            color: #{$black} !important;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #form .main {
+    label,
+    .markdown {
+      width: 100%;
+      height: 50%;
+    }
+  }
+}
+
+html {
+  &[mode="light"] {
+    #form {
+      .main {
+        .inner {
+          .subject,
+          .board {
+            background: #{$black1d};
+            .form-control {
+              color: #{$white};
+            }
+            .markdown {
+              border-color: #{$black1d};
+              background: #{$white};
+            }
+          }
+        }
+      }
+      .submit {
+        .inner {
+          .button-group {
+            button {
+              &:hover {
+                color: #{$black} !important;
+              }
+              &.send {
+                color: #{$black1d};
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (prefers-color-scheme: light) {
+  #form {
+    .main {
+      .inner {
+        .subject,
+        .board {
+          background: #{$black1d};
+          .markdown {
+            border-color: #{$black1d};
+            background: #{$white};
+          }
+        }
+      }
+    }
+    .submit {
+      .inner {
+        .button-group {
+          button {
+            &:hover {
+              color: #{$black} !important;
+            }
+            &.send {
+              color: #{$black1d};
+            }
+          }
+        }
+      }
+    }
+  }
+}

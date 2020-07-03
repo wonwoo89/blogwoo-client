@@ -3,12 +3,14 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "pm2 start server/ecosystem.config.js && pm2 monit",
+    "start": "pm2 start server/ecosystem.config.js --env $NODE_ENV && pm2 logs blogwoo-client --lines 1000",
+    "stop": "pm2 stop blogwoo-client && pm2 delete blogwoo-client",
     "serve": "cd client && vue-cli-service serve",
     "build": "cd client && vue-cli-service build",
     "lint": "cd client && vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "cookie-parser": "~1.4.4",
     "core-js": "^3.6.4",
     "debug": "~2.6.9",
@@ -18,6 +20,7 @@
     "node-sass-middleware": "0.11.0",
     "pug": "2.0.0-beta11",
     "vue": "^2.6.11",
+    "vue-meta": "^2.3.3",
     "vue-router": "^3.1.5",
     "vuex": "^3.1.2"
   },

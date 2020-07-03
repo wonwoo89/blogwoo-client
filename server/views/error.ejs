@@ -1,3 +1,59 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico">
+    <title>Blogwoo-error</title>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding');
+        html,
+        body {
+            background: #1d1d1d;
+        }
+        body * {
+            font-family: "Nanum Gothic Coding", Avenir, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-align: center;
+            color: #FFFFFF;
+        }
+        .error {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            margin: -250px 0 0 -150px;
+        }
+        .message {
+            word-break: keep-all;
+            line-height: 24px;
+        }
+        .button-group input[type="button"],
+        .button-group a {
+            display: inline-block;
+            width: 120px;
+            padding: 0 20px;
+            border-radius: 4px;
+            background: #FFFFFF;
+            box-sizing: border-box;
+            margin: 5px;
+            font-size: 14px;
+            text-decoration: none;
+            line-height: 40px;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+<div class="error">
+    <h1 class="status"><%= error.status %></h1>
+    <h3 class="message">음... 치명적이지만<br>괜찮은 오류입니다.</h3>
+    <div class="button-group">
+        <input type="button" onclick="window.history.back()" value="이전 페이지">
+        <a href="/">메인 페이지</a>
+    </div>
+</div>
+</body>
+</html>

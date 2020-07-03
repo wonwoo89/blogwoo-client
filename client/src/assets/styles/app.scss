@@ -1,0 +1,188 @@
+@import '@/assets/styles/preset/color.scss';
+@import '@/assets/styles/preset/font.scss';
+@import '@/assets/styles/preset/body.scss';
+@import '@/assets/styles/preset/form.scss';
+@import '@/assets/styles/preset/button.scss';
+@import '@/assets/styles/preset/markdown.scss';
+
+#app {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  transition: background-color .5s ease;
+  .router-view {
+    width: 100%;
+    max-width: 1024px;
+    padding: 20px 30px;
+    margin: 80px auto 30px;
+    transition: background-color .5s ease;
+  }
+}
+
+#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  padding: 10px 30px;
+  z-index: 5;
+  .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .9;
+    z-index: 1;
+    transition: background-color .5s ease;
+  }
+  .inner {
+    position: relative;
+    max-width: 1920px;
+    margin: 0 auto;
+    z-index: 2;
+    .title {
+      display: inline-block;
+      width: 65px;
+      margin-right: 6px;
+      line-height: 40px;
+    }
+    .display-mode {
+      position: relative;
+      float: right;
+      width: 20px;
+      height: 20px;
+      margin: 10px 0 10px 10px;
+      overflow: hidden;
+      .toggle {
+        display: inline-flex;
+        height: 100%;
+        transition: transform 1s ease;
+        .btn {
+          display: inline-flex;
+          width: 20px;
+          height: 20px;
+          outline: none;
+          transition: all .5s ease;
+          vertical-align: top;
+          .svg-icon {
+            display: inline-flex;
+            width: 20px;
+            height: 20px;
+            padding: 4px;
+            cursor: pointer;
+            &.sun {
+              path {
+                fill: #{$apricot};
+              }
+            }
+            &.moon {
+              path {
+                fill: #4600AE;
+              }
+            }
+          }
+        }
+      }
+    }
+    .routes {
+      float: right;
+      .route {
+        position: relative;
+        display: inline-block;
+        height: 100%;
+        margin-left: 15px;
+        line-height: 40px;
+        &.router-link-active {
+          position: absolute;
+          top: 0;
+          left: 65px;
+          margin-left: 0;
+          font-weight: 500;
+          transition: all 1s ease;
+          .indicator {
+            display: inline-block;
+            margin-right: 5px;
+          }
+        }
+        .indicator {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.line {
+  border: 0;
+  border-bottom: 1px solid #{$gray};
+  margin: 20px 0;
+  &.vertical {
+    border: 0;
+    border-left: 1px solid #{$gray};
+    margin: 0 20px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background: #{$black1d};
+    body {
+      background: #{$black1d};
+      #app {
+        background: #{$black1d};
+        color: #{$white};
+        .router-view {
+          background: #{$black1d};
+          .item:hover {
+            background: #{$black};
+          }
+        }
+      }
+      #nav {
+        .back {
+          background: #{$black1d};
+        }
+        .inner {
+          .display-mode {
+            .toggle {
+              transform: translateX(0);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    background: #{$white};
+    body {
+      background: #{$white};
+      #app {
+        background: #{$white};
+        color: #{$black};
+        .router-view {
+          background: #{$white};
+          .item:hover {
+            background: #{$gray};
+          }
+        }
+      }
+      #nav {
+        .back {
+          background: #{$white};
+        }
+        .inner {
+          .display-mode {
+            .toggle {
+              transform: translateX(-20px);
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   apps : [{
-    name: 'blogwoo',
+    name: 'blogwoo-client',
     version: '0.0.1',
     script: path.join(__dirname, 'bin/www'),
     watch: true,

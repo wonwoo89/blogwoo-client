@@ -1,0 +1,19 @@
+.etc {
+  .creator {
+    margin-bottom: 30px;
+  }
+  .title {
+    margin-bottom: 20px;
+  }
+  .text {
+    display: inline-block;
+    width: 100%;
+    line-height: 20px;
+    transition: all .5s ease;
+  }
+
+  .lazy-text-enter {
+    opacity: 0;
+    transform: translateY(30%);
+  }
+}

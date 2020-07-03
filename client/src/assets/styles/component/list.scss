@@ -1,0 +1,134 @@
+@import '@/assets/styles/preset/color.scss';
+
+.wrapper {
+  position: relative;
+  .list {
+    padding-left: 100px;
+    &.full {
+      padding-left: 0;
+    }
+    .item {
+      border-radius: 4px;
+      padding: 20px 10px;
+      cursor: pointer;
+      transition: background-color .3s ease;
+      .title {
+        margin-bottom: 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .created {
+        margin-bottom: 10px;
+      }
+      .tag {
+        margin-bottom: 5px;
+        span {
+          display: inline-block;
+          margin: 0 5px 5px 0;
+          border-radius: 4px;
+          background: #{$black15};
+          padding: 0 8px;
+          line-height: 20px;
+          vertical-align: top;
+        }
+      }
+      .contents {
+        display: -webkit-box;
+        width: 100%;
+        max-height: 40px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        line-height: 20px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .tag.all {
+    position: relative;
+    &.fixed {
+      .inner {
+        position: fixed;
+        top: 70px;
+        left: inherit;
+      }
+    }
+    .inner {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: 90px;
+      max-height: 500px;
+      border-radius: 4px;
+      padding-bottom: 5px;
+      margin-bottom: 50px;
+      .title {
+        padding: 10px;
+      }
+      .list {
+        padding: 0;
+        overflow: hidden;
+        .item {
+          display: inline-block;
+          position: relative;
+          width: 100%;
+          border: 0;
+          border-radius: 0;
+          background: none;
+          padding: 0 10px;
+          margin: 0 0 2px;
+          line-height: 20px;
+          vertical-align: top;
+          transition: all .3s ease;
+          cursor: pointer;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          .name {
+            display: inline-block;
+            width: 100%;
+            padding-right: 20px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            vertical-align: top;
+          }
+          .count {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            width: 20px;
+            height: 20px;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* transition  */
+.post-list-enter {
+  opacity: 0;
+  transform: translateY(30%);
+}
+.post-list-enter-active {
+  transition: transform 1s ease, opacity 1s ease !important;
+}
+.post-list-leave-to,
+.post-list-leave-active {
+  position: absolute;
+  opacity: 0;
+  transition: none !important;
+}
+
+.tag-enter,
+.tag-leave-to {
+  opacity: 0;
+  transform: translateY(100%);
+}
+.tag-enter-active {
+  transition-duration: 1s !important;
+}

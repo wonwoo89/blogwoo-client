@@ -1,0 +1,122 @@
+//@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding');
+
+.font {
+  &.black {
+    color: #{$black}
+  }
+  &.white {
+    color: #{$white}
+  }
+  &.gray-light {
+    color: #{$lightGray}
+  }
+  &.gray {
+    color: #{$gray}
+  }
+  &.gray-bold {
+    color: #{$boldGray}
+  }
+  &.gray-dark {
+    color: #{$darkGray}
+  }
+  &.red {
+    color: #{$red}
+  }
+  &.blue {
+    color: #{$blue}
+  }
+  &.blue-dark {
+    color: #{$darkBlue}
+  }
+  &.yellow-light {
+    color: #{$lightYellow}
+  }
+  &.yellow {
+    color: #{$yellow}
+  }
+  &.apricot {
+    color: #{$apricot};
+  }
+  &.s10 {
+    font-size: 10px;
+  }
+  &.s12 {
+    font-size: 12px;
+  }
+  &.s14 {
+    font-size: 14px;
+  }
+  &.s16 {
+    font-size: 16px;
+  }
+  &.s18 {
+    font-size: 18px;
+  }
+  &.s20 {
+    font-size: 20px;
+  }
+  &.s24 {
+    font-size: 24px;
+  }
+  &.s30 {
+    font-size: 30px;
+  }
+  &.s36 {
+    font-size: 36px;
+  }
+  &.s40 {
+    font-size: 40px;
+  }
+  &.s50 {
+    font-size: 50px;
+  }
+  &.s60 {
+    font-size: 60px;
+  }
+  &.w1 {
+    font-weight: 100;
+  }
+  &.w2 {
+    font-weight: 200;
+  }
+  &.w3 {
+    font-weight: 300;
+  }
+  &.w4 {
+    font-weight: 400;
+  }
+  &.w5 {
+    font-weight: 500;
+  }
+  &.w6 {
+    font-weight: 600;
+  }
+  &.w7 {
+    font-weight: 700;
+  }
+  &.w8 {
+    font-weight: 800;
+  }
+  &.w9 {
+    font-weight: 900;
+  }
+  &.normal {
+    font-weight: normal;
+  }
+  &.bold {
+    font-weight: bold;
+  }
+  &.bolder {
+    font-weight: bolder;
+  }
+  &.left {
+    text-align: left;
+  }
+  &.center {
+    text-align: center;
+  }
+  &.right {
+    text-align: right;
+  }
+}
